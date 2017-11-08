@@ -1,4 +1,4 @@
-export class Offer {
+export class HomepageOffer {
     id: number;
     image: string;
     location: string;

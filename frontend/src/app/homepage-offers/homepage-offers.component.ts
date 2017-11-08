@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
-import { OffersService } from './offers.service';
-import { Offer } from './offers.model';
+import { HomepageOffersService } from './homepage-offers.service';
+import { HomepageOffer } from './homepage-offers.model';
 
 @Component({
-  selector: '<volontulo-offers>',
-  templateUrl: './offers.component.html',
-  styleUrls: ['./offers.component.css'],
-  providers: [OffersService]
+  selector: '<homepage-offers>',
+  templateUrl: './homepage-offers.component.html',
+  styleUrls: ['./homepage-offers.component.css'],
+  providers: [HomepageOffersService]
 })
-export class OffersComponent implements OnInit {
-  offers: Array<Offer>;
+export class HomepageOffersComponent implements OnInit {
+  offers: Array<HomepageOffer>;
 
-  constructor(private offersService: OffersService) { }
+  constructor(private offersService: HomepageOffersService) { }
 
   ngOnInit() {
-   this.offersService.getOffers()
+   this.offersService.getHomepageOffers()
     .subscribe(
       offers => {
         this.offers = offers;
