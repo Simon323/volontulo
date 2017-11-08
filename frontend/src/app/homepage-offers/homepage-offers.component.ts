@@ -4,7 +4,7 @@ import { HomepageOffersService } from './homepage-offers.service';
 import { HomepageOffer } from './homepage-offers.model';
 
 @Component({
-  selector: '<homepage-offers>',
+  selector: '<volontulo-homepage-offers>',
   templateUrl: './homepage-offers.component.html',
   styleUrls: ['./homepage-offers.component.css'],
   providers: [HomepageOffersService]
