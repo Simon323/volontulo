@@ -1,26 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { OffersService } from './offers.service';
 import { Offer } from './offers.model';
 
 @Component({
   selector: '<volontulo-homepage-offers>',
   templateUrl: './homepage-offers.component.html',
   styleUrls: ['./homepage-offers.component.css'],
-  providers: [OffersService]
 })
 export class HomepageOffersComponent implements OnInit {
-  offers: Array<Offer>;
+  @Input() offer:Offer;
 
-  constructor(private offersService: OffersService) { }
+  constructor() {}
 
   ngOnInit() {
-   this.offersService.getOffers()
-    .subscribe(
-      offers => {
-        this.offers = offers;
-      }
-    );
   }
 }
 

@@ -1,3 +1,5 @@
 <div class="container">
-  <volontulo-homepage-offers></volontulo-homepage-offers>
+  <div class="row">
+    <volontulo-homepage-offers *ngFor="let offer of offers" [offer]="offer" class="col-sm-6 col-md-4"></volontulo-homepage-offers>     
+  </div>
 </div>
