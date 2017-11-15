@@ -13,14 +13,14 @@ import { Offer } from 'app/homepage-offer/offers.model';
 export class HomePageComponent implements OnInit {
   offers: Array<Offer>;
 
-  constructor(private offersService:OffersService) { }
+  constructor(private offersService: OffersService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.offersService.getOffers()
       .subscribe(
         offers => {
           this.offers = offers;
         }
-      )
+      );
   }
 }
