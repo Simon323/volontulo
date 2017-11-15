@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HomepageOffersComponent } from '../homepage-offers/homepage-offers.component';
-import { OffersService } from 'app/homepage-offers/offers.service';
-import { Offer } from 'app/homepage-offers/offers.model';
+import { OffersService } from 'app/homepage-offer/offers.service';
+import { Offer } from 'app/homepage-offer/offers.model';
 
 @Component({
   selector: 'volontulo-home',
