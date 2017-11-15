@@ -5,11 +5,12 @@ import { Offer } from 'app/homepage-offer/offers.model';
 
 @Component({
   selector: 'volontulo-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.css'],
   providers: [OffersService]
 })
-export class HomeComponent implements OnInit {
+
+export class HomePageComponent implements OnInit {
   offers: Array<Offer>;
 
   constructor(private offersService:OffersService) { }

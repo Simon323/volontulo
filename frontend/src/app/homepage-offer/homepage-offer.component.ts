@@ -1,18 +1,21 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Offer } from './offers.model';
+import { OffersService } from './offers.service'
 
 @Component({
   selector: '<volontulo-homepage-offer>',
   templateUrl: './homepage-offer.component.html',
   styleUrls: ['./homepage-offer.component.css'],
+  providers: [OffersService]
 })
-export class HomepageOfferComponent implements OnInit {
+export class HomepageOfferComponent {
   @Input() offer:Offer;
 
-  constructor() {}
+  constructor(private offersService:OffersService) {}
 
-  ngOnInit() {
+  getDjangoViewUrl(offer: Offer): string {
+    return this.offersService.getDjangoViewUrl(offer);
   }
 }
 
