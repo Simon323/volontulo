@@ -6,12 +6,12 @@ import 'rxjs/add/operator/map';
 import { environment } from '../../environments/environment';
 
 @Injectable()
-export class HomepageOffersService {
+export class OffersService {
   private url = `${environment.apiRoot}/offers/`;
 
   constructor (private http: Http) { }
 
-  getHomepageOffers() {
+  getOffers() {
     return this.http.get(this.url, { withCredentials: true } )
       .map((res: Response) => res.json());
   }

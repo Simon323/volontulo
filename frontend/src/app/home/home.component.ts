@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { OffersComponent } from '../offers/offers.component';
+import { HomepageOffersComponent } from '../homepage-offers/homepage-offers.component';
 
 @Component({
   selector: 'volontulo-home',
