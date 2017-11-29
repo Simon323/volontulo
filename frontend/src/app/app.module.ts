@@ -20,6 +20,7 @@ import { AboutUsComponent } from './static/about-us.component';
 import { RegulationsComponent } from './static/regulations.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
+import { OrganizationsComponent } from './organizations/organizations.component';
 
 Raven.config(environment.sentryDSN).install();
 
@@ -47,6 +48,10 @@ const appRoutes: Routes = [
     component: RegulationsComponent
   },
   {
+    path: 'organizations',
+    component: OrganizationsComponent
+  },
+  {
     path: '**',
     component: RedirectComponent
   }
@@ -63,7 +68,8 @@ const appRoutes: Routes = [
     CookieLawBannerComponent,
     AboutUsComponent,
     RegulationsComponent,
-    LoginComponent
+    LoginComponent,
+    OrganizationsComponent
   ],
   imports: [
     BrowserModule,
