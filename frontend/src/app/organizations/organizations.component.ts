@@ -1,24 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { OrganizationsService } from './organizations.service';
 import { Organization } from '../organization/organization.model';
+import { OrganizationService } from '../organization/organization.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-organizations',
+  selector: 'volontulo-organizations',
   templateUrl: './organizations.component.html',
   styleUrls: ['./organizations.component.css'],
-  providers: [OrganizationsService]
 })
 export class OrganizationsComponent implements OnInit {
-  organizations: Array<Organization> = [];
+  public organizations$: Observable<Organization[]>;
 
-  constructor(private organizationsService: OrganizationsService) { }
+  constructor(
+    private organizationsService: OrganizationsService, 
+    private organizationService: OrganizationService
+  ) { }
 
   ngOnInit() {
-    this.organizationsService.getOrganizations()
-      .subscribe(
-        organizations => {
-          this.organizations = organizations;
-        }
-      );
+    this.organizations$ = this.organizationsService.getOrganizations();
+  }
+  
+  getOrganizationViewUrl(organization: Organization): string {
+    return this.organizationService.getOrganizationViewUrl(organization);
   }
 }

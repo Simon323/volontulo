@@ -26,6 +26,8 @@ import { IconComponent } from './icon/icon.component';
 import { IconLabelComponent } from './icon-label/icon-label.component';
 import { BannerComponent } from './banner/banner.component';
 import { OrganizationsComponent } from './organizations/organizations.component';
+import { OrganizationsService } from 'app/organizations/organizations.service';
+import { OrganizationService } from 'app/organization/organization.service';
 
 Raven.config(environment.sentryDSN).install();
 
@@ -97,6 +99,8 @@ const appRoutes: Routes = [
   providers: [
     AuthService,
     OffersService,
+    OrganizationsService, 
+    OrganizationService,
     { provide: WindowService, useFactory: WindowFactory },
     { provide: ErrorHandler, useClass: RavenErrorHandler },
   ],

@@ -12,8 +12,8 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <ng-container *ngIf="organizations != null">
-                <table class="table table-striped">
+            <ng-container *ngIf="(organizations$ | async) as organizations">
+                <table *ngIf="organizations.length > 0; else noOrganizations" class="table table-striped">
                     <thead>
                         <tr>
                         <th scope="col">Nazwa</th>
@@ -22,15 +22,15 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let organization of organizations">
-                            <td>{{ organization.name }}</td>
-                            <td>{{ organization.url }}</td>
+                            <td><a href="{{ getOrganizationViewUrl(organization) }}">{{ organization.name }}</a></td>
+                            <td>{{ organization.address }}</td>
                         </tr>
                     </tbody>
                 </table>
+                <ng-template #noOrganizations>
+                    <p>Brak zdefiniowanych organizacji.</p>
+                </ng-template>
             </ng-container>            
-            <ng-container *ngIf="organizations == null">
-                <p>Brak zdefiniowanych organizacji.</p>
-            </ng-container>
         </div>
     </div>        
 </div>

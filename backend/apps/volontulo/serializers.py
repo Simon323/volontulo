@@ -24,6 +24,7 @@ class OrganizationSerializer(serializers.HyperlinkedModelSerializer):
             'name',
             'slug',
             'url',
+            'address',
         )
 
     @staticmethod
