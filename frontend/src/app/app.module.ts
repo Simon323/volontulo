@@ -12,6 +12,8 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { RedirectComponent } from './redirect.component';
 import { WindowService, WindowFactory } from './window.service';
+import { OrganizationService } from './organization/organization.service';
+import { OrganizationDetailsComponent } from './organization/organization-details.component';
 import { HomepageOfferComponent } from './homepage-offer/homepage-offer.component';
 import { HomePageComponent } from './home/homepage.component';
 import { FooterComponent } from './footer/footer.component';
@@ -27,7 +29,9 @@ import { IconLabelComponent } from './icon-label/icon-label.component';
 import { BannerComponent } from './banner/banner.component';
 import { OrganizationsComponent } from './organizations/organizations.component';
 import { OrganizationsService } from 'app/organizations/organizations.service';
-import { OrganizationService } from 'app/organization/organization.service';
+import { FaqOrganizationsComponent } from './static/faq-organizations.component';
+import { OfficeComponent } from './static/office/office.component';
+import { FaqVolunteersComponent } from './static/faq-volunteers.component';
 
 Raven.config(environment.sentryDSN).install();
 
@@ -43,7 +47,23 @@ const appRoutes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'o-nas',
+    path: 'organizations/:organizationSlug/:organizationId',
+    component: OrganizationDetailsComponent,
+  },
+  {
+    path: 'faq-organizations',
+    component: FaqOrganizationsComponent,
+  },
+  {
+    path: 'faq-volunteers',
+    component: FaqVolunteersComponent,
+  },
+  {
+    path: 'office',
+    component: OfficeComponent,
+  },
+  {
+    path: 'about-us',
     component: AboutUsComponent
   },
   {
@@ -75,6 +95,7 @@ const appRoutes: Routes = [
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
+    OrganizationDetailsComponent,
     HomepageOfferComponent,
     CookieLawBannerComponent,
     AboutUsComponent,
@@ -85,7 +106,10 @@ const appRoutes: Routes = [
     IconLabelComponent,
     BannerComponent,
     LoginComponent,
-    OrganizationsComponent
+    OrganizationsComponent,
+    FaqOrganizationsComponent,
+    OfficeComponent,
+    FaqVolunteersComponent,
   ],
   imports: [
     BrowserModule,
