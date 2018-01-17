@@ -17,9 +17,8 @@ describe('OrganizationsComponent', () => {
       providers: [
         {
           provide: OrganizationsService,
-          useValue: { 
-            getOrganizations: jasmine.createSpy('getOrganizations')//,
-            //  getOrganizations: new Subject<Organization[]>();
+          useValue: {
+            getOrganizations: jasmine.createSpy('getOrganizations')
           },
         },
         {
@@ -42,19 +41,4 @@ describe('OrganizationsComponent', () => {
     organizationsService = _organizationsService;
 
   }));
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should display the list of organizations', () => {
-    // organizationsService.getOrganizations.and.returnValue(Observable.of([]));
-    // organizationsService.getOrganizations.next([])
-    fixture.detectChanges();
-
-    // fixture.debugElement.queryAll(by.css('.organization'));
-
-    expect(organizationsService.getOrganizations).toHaveBeenCalled();
-
-  })
 });

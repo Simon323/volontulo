@@ -13,14 +13,14 @@ export class OrganizationsComponent implements OnInit {
   public organizations$: Observable<Organization[]>;
 
   constructor(
-    private organizationsService: OrganizationsService, 
+    private organizationsService: OrganizationsService,
     private organizationService: OrganizationService
   ) { }
 
   ngOnInit() {
     this.organizations$ = this.organizationsService.getOrganizations();
   }
-  
+
   getOrganizationViewUrl(organization: Organization): string {
     return this.organizationService.getOrganizationViewUrl(organization);
   }

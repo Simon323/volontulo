@@ -123,7 +123,7 @@ const appRoutes: Routes = [
   providers: [
     AuthService,
     OffersService,
-    OrganizationsService, 
+    OrganizationsService,
     OrganizationService,
     { provide: WindowService, useFactory: WindowFactory },
     { provide: ErrorHandler, useClass: RavenErrorHandler },
