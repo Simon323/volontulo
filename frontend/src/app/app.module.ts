@@ -28,7 +28,7 @@ import { IconComponent } from './icon/icon.component';
 import { IconLabelComponent } from './icon-label/icon-label.component';
 import { BannerComponent } from './banner/banner.component';
 import { OrganizationsComponent } from './organizations/organizations.component';
-import { OrganizationsService } from 'app/organizations/organizations.service';
+import { OrganizationsService } from './organizations/organizations.service';
 import { FaqOrganizationsComponent } from './static/faq-organizations.component';
 import { OfficeComponent } from './static/office/office.component';
 import { FaqVolunteersComponent } from './static/faq-volunteers.component';
