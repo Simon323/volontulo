@@ -21,4 +21,8 @@ export class OrganizationService {
   getOrganizationViewUrl(organization: Organization): string {
     return `${environment.djangoRoot}/organizations/${organization.slug}/${organization.id}`;
   }
+
+  getOrganizationCreateViewUrl(): string {
+    return `${environment.djangoRoot}/organizations/create`;
+  }
 }

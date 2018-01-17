@@ -24,4 +24,8 @@ export class OrganizationsComponent implements OnInit {
   getOrganizationViewUrl(organization: Organization): string {
     return this.organizationService.getOrganizationViewUrl(organization);
   }
+
+  getOrganizationCreateViewUrl(): string {
+    return this.organizationService.getOrganizationCreateViewUrl();
+  }
 }
