@@ -3,20 +3,19 @@ import { HttpModule } from '@angular/http';
 import { Subject } from 'rxjs/Subject';
 
 import { OrganizationsComponent } from './organizations.component';
-import { OrganizationsService } from './organizations.service';
 import { OrganizationService } from '../organization/organization.service';
 
 describe('OrganizationsComponent', () => {
   let component: OrganizationsComponent;
   let fixture: ComponentFixture<OrganizationsComponent>;
-  let organizationsService: OrganizationsService;
+  let organizationService: OrganizationService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ OrganizationsComponent ],
       providers: [
         {
-          provide: OrganizationsService,
+          provide: OrganizationService,
           useValue: {
             getOrganizations: jasmine.createSpy('getOrganizations')
           },
@@ -37,8 +36,8 @@ describe('OrganizationsComponent', () => {
     fixture.detectChanges();
   });
 
-  beforeEach(inject([OrganizationsService], (_organizationsService) => {
-    organizationsService = _organizationsService;
+  beforeEach(inject([OrganizationService], (_organizationsService) => {
+    organizationService = _organizationsService;
 
   }));
 });
