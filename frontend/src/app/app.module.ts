@@ -110,7 +110,7 @@ const appRoutes: Routes = [
     FaqVolunteersComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'volontulo' }),
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
