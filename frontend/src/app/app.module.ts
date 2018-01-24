@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { RedirectComponent } from './redirect.component';
 import { WindowService, WindowFactory } from './window.service';
 import { OrganizationService } from './organization/organization.service';
-import { OrganizationDetailsComponent } from './organization/organization-details.component';
+import { OrganizationDetailsComponent } from './organization/organization-details/organization-details.component';
 import { HomepageOfferComponent } from './homepage-offer/homepage-offer.component';
 import { HomePageComponent } from './home/homepage.component';
 import { FooterComponent } from './footer/footer.component';
@@ -29,6 +29,8 @@ import { IconLabelComponent } from './icon-label/icon-label.component';
 import { BannerComponent } from './banner/banner.component';
 import { OrganizationsComponent } from './organizations/organizations.component';
 import { FaqOrganizationsComponent } from './static/faq-organizations.component';
+import { OrganizationContactComponent } from './organization/organization-contact/organization-contact.component';
+import { OrganizationComponent } from './organization/organization.component';
 import { OfficeComponent } from './static/office/office.component';
 import { FaqVolunteersComponent } from './static/faq-volunteers.component';
 
@@ -47,7 +49,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'organizations/:organizationSlug/:organizationId',
-    component: OrganizationDetailsComponent,
+    component: OrganizationComponent,
   },
   {
     path: 'faq-organizations',
@@ -106,6 +108,8 @@ const appRoutes: Routes = [
     BannerComponent,
     OrganizationsComponent,
     FaqOrganizationsComponent,
+    OrganizationContactComponent,
+    OrganizationComponent,
     OfficeComponent,
     FaqVolunteersComponent,
   ],
