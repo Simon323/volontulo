@@ -22,7 +22,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let organization of organizations">
-                            <td><a href="{{ getOrganizationViewUrl(organization) }}">{{ organization.name }}</a></td>
+                            <td><a [routerLink]="[organization.slug, organization.id]">{{ organization.name }}</a></td>
                             <td>{{ organization.address }}</td>
                         </tr>
                     </tbody>
