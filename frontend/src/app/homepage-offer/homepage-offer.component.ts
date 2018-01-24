@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { Offer } from './offers.model';
 import { OffersService } from './offers.service';
 import { OrganizationService } from '../organization/organization.service';

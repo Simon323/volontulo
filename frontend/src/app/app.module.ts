@@ -28,7 +28,6 @@ import { IconComponent } from './icon/icon.component';
 import { IconLabelComponent } from './icon-label/icon-label.component';
 import { BannerComponent } from './banner/banner.component';
 import { OrganizationsComponent } from './organizations/organizations.component';
-import { OrganizationsService } from './organizations/organizations.service';
 import { FaqOrganizationsComponent } from './static/faq-organizations.component';
 import { OfficeComponent } from './static/office/office.component';
 import { FaqVolunteersComponent } from './static/faq-volunteers.component';
@@ -105,7 +104,6 @@ const appRoutes: Routes = [
     IconComponent,
     IconLabelComponent,
     BannerComponent,
-    LoginComponent,
     OrganizationsComponent,
     FaqOrganizationsComponent,
     OfficeComponent,
@@ -123,7 +121,6 @@ const appRoutes: Routes = [
   providers: [
     AuthService,
     OffersService,
-    OrganizationsService,
     OrganizationService,
     { provide: WindowService, useFactory: WindowFactory },
     { provide: ErrorHandler, useClass: RavenErrorHandler },
